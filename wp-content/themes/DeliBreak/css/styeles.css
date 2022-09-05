@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Roboto+Slab:wght@200;400;500;700&display=swap");
+:root {
+  --font-primary: "RobotoSlab-Medium";
+  --font-secundary: "Josefin Slab", serif;
+  --font-action: "Muli", serif;
+  --primary-color: #f0e7e2;
+  --secondary-color: #b68e76;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("../img/background.png");
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: #fff;
+}
+
+.cabecalho {
+  font-family: var(--font-primary);
+  font-size: 3vh;
+}
+
+.social {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 4em;
+  grid-column-gap: 20px;
+}
+
+#header {
+  height: 200px;
+  width: 80%;
+  background-color: var(--secondary-color);
+  border-radius: 0 0 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 8vh;
+  font-family: var(--font-primary);
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+  color: #222;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 920px) {
+  #header {
+    justify-content: flex-end;
+    border-radius: 0;
+  }
+
+  #menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    right: 0px;
+    color: #fff;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    background-color: #b68e76;
+  }
+
+  #nav {
+    background: none;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #nav.active #menu {
+    display: block;
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu a {
+    padding: 1.5rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    font-size: 5vh;
+    text-shadow: 0.3rem 0.4rem 2px rgba(0, 0, 0, 0.4);
+    color: #fff;
+  }
+
+  #btn-mobile {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    color: #fff;
+  }
+
+  #hamburger {
+    display: block;
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburger::after,
+#hamburger::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  h1 {
+    font-size: 5vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 5vh;
+  }
+}
+section#topo {
+  height: 140vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/primeira-imagem.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section#topo .option {
+  width: 80%;
+  text-align: justify;
+  font-family: "Roboto Slab";
+  position: relative;
+  top: 25%;
+  margin: auto;
+}
+section#topo .sabores {
+  display: flex;
+  flex-direction: column;
+}
+section#topo h3 {
+  font-size: 5vh;
+  font-weight: bolder;
+}
+section#topo .free {
+  font-size: 3vh;
+  padding-bottom: 1vh;
+}
+section#topo select {
+  width: 60%;
+  height: 5vh;
+  font-size: 2vh;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background-color: #b68e76;
+  position: relative;
+  bottom: 2vh;
+  margin-top: 1vh;
+  text-align: center;
+}
+section#topo select:hover {
+  outline: none;
+  background-color: #fff;
+  color: #b68e76;
+}
+section#topo .btn-next {
+  background-color: #b68e76;
+  color: #fff;
+  width: 60%;
+  height: 5vh;
+  border-radius: 15px;
+  border: none;
+  font-size: 2vh;
+  cursor: pointer;
+}
+section#topo .btn-next:hover {
+  background-color: #fff;
+  color: #b68e76;
+}
+section#topo .promotions {
+  font-size: 3vh;
+  font-weight: 500;
+}
+section#topo .text {
+  font-size: 1vh;
+}
+section#topo #second-column {
+  background-color: #fff;
+  border-radius: 50px 0 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section#topo .request {
+  float: right;
+  width: 51%;
+  height: 40vh;
+  background-color: #fff;
+  border-radius: 50px 0 0 50px;
+}
+section#topo .text-topo {
+  padding-top: 2vh;
+}
+section#topo strong {
+  font-size: 2.5vh;
+}
+section#topo .lab-inp {
+  padding-top: 2vh;
+  font-size: 2vh;
+}
+section#topo .right {
+  width: 25%;
+  border-radius: 0 10px;
+  text-align: center;
+}
+@media screen and (max-width: 912px) {
+  section#topo {
+    height: 90vh;
+  }
+  section#topo h3 {
+    font-size: 3vh;
+  }
+  section#topo .free {
+    font-size: 2vh;
+  }
+  section#topo strong {
+    font-size: 1.5vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  section#topo {
+    height: 140vh;
+  }
+}
+section#topo .option {
+  top: 0;
+}
+section#topo strong {
+  font-size: 2vh;
+}
+section#topo .promotions {
+  font-size: 2.5vh;
+}
+
+section#star {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+section#star #back {
+  background: linear-gradient(to left, #d3d3d3, #e9e9e9);
+  border-radius: 20px;
+}
+section#star .conteudos {
+  height: 93vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+}
+section#star h3 {
+  font-family: var(--font-primary);
+  font-size: 5vh;
+  font-weight: bolder;
+}
+section#star .favorite {
+  font-family: "RobotoSlab-ExtraLight";
+  font-size: 3vh;
+}
+section#star .descricao {
+  font-family: "Barlow";
+  font-size: 2vh;
+}
+section#star .botoes {
+  width: 100%;
+}
+section#star .btn-star {
+  background-color: #b68e76;
+  color: #fff;
+  width: 30%;
+  height: 5vh;
+  border-radius: 15px;
+  border: none;
+  font-size: 2vh;
+  cursor: pointer;
+  margin-left: 5vh;
+}
+section#star .btn-star:hover {
+  background-color: #fff;
+  color: #b68e76;
+}
+section#star .last-text {
+  padding-top: 4vh;
+}
+section#star .birthday {
+  font-family: var(--font-primary);
+  font-size: 2.5vh;
+  text-align: justify;
+}
+section#star .informativo {
+  font-family: "Barlow";
+  font-size: 2vh;
+}
+@media screen and (min-width: 800px) and (max-width: 920px) {
+  section#star {
+    height: 140vh;
+  }
+  section#star .conteudos {
+    height: 130vh;
+  }
+  section#star h3 {
+    font-size: 4vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  section#star {
+    height: 155vh;
+  }
+}
+
+section#free-drink {
+  height: 115vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/quinta-imagem.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section#free-drink .todo-conteudo {
+  width: 50%;
+  float: right;
+}
+section#free-drink h3 {
+  font-family: "RobotoSlab-ExtraLight";
+  font-size: 8vh;
+}
+section#free-drink strong {
+  font-family: var(--font-primary);
+  font-size: 4vh;
+}
+section#free-drink .sign {
+  font-size: "RobotoSlab-Regular";
+  font-size: 3vh;
+}
+section#free-drink .form-control {
+  border-radius: 15px;
+}
+section#free-drink input,
+section#free-drink input::placeholder {
+  color: #222;
+  font-family: "RobotoSlab-Bold";
+  font-size: 2vh;
+}
+section#free-drink .btn-sign {
+  background-color: #b68e76;
+  color: #fff;
+  width: 100%;
+  height: 5vh;
+  border-radius: 15px;
+  border: none;
+  font-size: 2vh;
+  cursor: pointer;
+}
+section#free-drink .btn-sign:hover {
+  background-color: #fff;
+  color: #b68e76;
+}
+@media screen and (max-width: 912px) {
+  section#free-drink {
+    height: 70vh;
+    background-position: center;
+  }
+  section#free-drink .todo-conteudo {
+    width: auto;
+    float: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  section#free-drink {
+    height: 90vh;
+  }
+  section#free-drink h3 {
+    font-size: 5vh;
+  }
+}
+
+section#menu {
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  background-color: #b68e76;
+}
+section#menu .div-fundo {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+}
+section#menu h3 {
+  font-family: var(--font-primary);
+  font-size: 7vh;
+  color: #fff;
+}
+section#menu .dessert {
+  font-family: var(--font-primary);
+  font-size: 4vh;
+  color: #fff;
+}
+section#menu .shakes {
+  font-family: var(--font-primary);
+  font-size: 5vh;
+  font-weight: bolder;
+  color: #fff;
+}
+section#menu .title {
+  font-family: "RobotoSlab-ExtraLight";
+  font-weight: 600;
+  font-size: 4vh;
+}
+
+/*# sourceMappingURL=styeles.css.map */
